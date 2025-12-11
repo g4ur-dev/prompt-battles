@@ -7,7 +7,8 @@
 		"@types/react": "^19.2.7",
 		"globals": "^16.5.0",
 		"jest": "^30.2.0",
-		"ts-jest": "^29.4.5",
+		"jest-environment-jsdom": "^30.2.0",
+		"ts-jest": "^29.4.6",
 		"typescript": "^5.9.3"
 	},
 	"scripts": {
@@ -20,7 +21,7 @@
 		"format": "biome format --write ."
 	},
 	"dependencies": {
-		"next": "^16.0.5",
+		"next": "^16.0.8",
 		"react": "^19.2.0",
 		"react-dom": "^19.2.0"
 	}
