@@ -95,14 +95,14 @@ export default function RoomPage() {
     loadPlayers();
 
     const playersChannel = supabase
-      .channel(⁠ room-${roomId} ⁠)
+      .channel(`room-${roomId}`)
       .on(
         "postgres_changes",
         {
           event: "*",
           schema: "public",
           table: "room_players",
-          filter: ⁠ room_id=eq.${roomId} ⁠,
+          filter: `room_id=eq.${roomId}`,
         },
         (payload) => {
           const updated = payload.new as Player;
@@ -115,7 +115,7 @@ export default function RoomPage() {
       .subscribe();
 
     const phaseChannel = supabase
-      .channel(⁠ room-phase-${roomId} ⁠)
+      .channel(`room-phase-${roomId}`)
       .on("broadcast", { event: "phase_update" }, (payload) => {
         setBattlePhase(payload.payload.phase);
         setTimeLeft(payload.payload.time);
