@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/lib/supabase";
 
+/* ---------------- TYPES ---------------- */
+
 type Player = {
   id: string;
   user_id: string;
